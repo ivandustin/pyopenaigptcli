@@ -1,3 +1,4 @@
+from sys import stdout
 from ...gpt import gpt
 from .arguments.parse import parse
 
@@ -7,4 +8,5 @@ def main():
     instructions = arguments.instructions.read_text()
     input = arguments.input.read_text()
     output = gpt(instructions, input)
-    print(output)
+    output = output.encode("utf-8")
+    stdout.buffer.write(output)
