@@ -52,8 +52,8 @@ pip install keyring
 
 Then, set the API key using the following command:
 
+> **Note:** When you run this command, it will prompt you to enter the API key in the stdin.
+
 ```bash
 keyring set openai api_key
 ```
-
-When you run this command, it will prompt you to enter the API key in the stdin.
