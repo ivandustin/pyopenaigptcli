@@ -18,10 +18,10 @@ The basic syntax for using the `pyopenaigptcli` tool is as follows:
 gpt instructions.txt input.txt > output.txt
 ```
 
-You can also use `-` to read input from stdin. For example:
+You can also use `-` to any file parameters to read from stdin. For example:
 
 ```bash
-cat input.txt | gpt tech-doc.txt - > README.md
+cat input.txt | gpt instructions.txt - > README.md
 ```
 
 ## Example
