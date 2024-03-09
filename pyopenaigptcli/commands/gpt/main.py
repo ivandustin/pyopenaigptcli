@@ -5,5 +5,7 @@ from .arguments.parse import parse
 
 def main():
     arguments = parse()
-    contexts = list(map(lambda context: context.read(), arguments.context))
-    stdout.buffer.write(gpt(arguments.command, contexts).encode("utf-8"))
+    instructions = arguments.instructions.read()
+    input = arguments.input.read()
+    output = gpt(instructions, input)
+    stdout.buffer.write(output.encode("utf-8"))
