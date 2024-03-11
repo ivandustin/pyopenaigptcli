@@ -7,5 +7,5 @@ def main():
     arguments = parse()
     instructions = arguments.instructions.read()
     input = arguments.input.read()
-    output = gpt(instructions, input)
+    output = gpt(arguments.model, instructions, input)
     stdout.buffer.write(output.encode("utf-8"))

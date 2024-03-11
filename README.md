@@ -57,3 +57,11 @@ Then, set the API key using the following command:
 ```bash
 keyring set openai api_key
 ```
+
+## OpenAI Model
+
+The default model used by `pyopenaigptcli` is `gpt-3.5-turbo`. You can specify a different model using the `--model` command-line option.
+
+## Other Options
+
+For additional details and available options, you can run `gpt --help` from the command line.
