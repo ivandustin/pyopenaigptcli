@@ -7,7 +7,7 @@ The `pyopenaigptcli` is a command line interface tool that utilizes the GPT (Gen
 To use the `pyopenaigptcli` tool, you need to have Python installed on your system. You can install the tool using pip:
 
 ```bash
-pip install pyopenaigptcli
+pip install git+https://github.com/ivandustin/pyopenaigptcli.git
 ```
 
 ## Usage
@@ -60,8 +60,16 @@ keyring set openai api_key
 
 ## OpenAI Model
 
-The default model used by `pyopenaigptcli` is `gpt-4-turbo-preview`. You can specify a different model using the `--model` command-line option.
+By default, `pyopenaigptcli` uses the `gpt-4-turbo-preview` model. You can select a different model with the `--model` option:
 
-## Other Options
+```bash
+gpt instructions.txt input.txt --model gpt-3.5-turbo > output.txt
+```
 
-For additional details and available options, you can run `gpt --help` from the command line.
+### JSON Output
+
+For structured output, use the `--json` option. Ensure your instructions are in JSON Schema format:
+
+```bash
+gpt instructions.json input.txt --json > output.json
+```
