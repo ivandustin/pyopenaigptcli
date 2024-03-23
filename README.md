@@ -24,21 +24,23 @@ You can also use `-` to any file parameters to read from stdin. For example:
 cat input.txt | gpt instructions.txt - > README.md
 ```
 
-## Example
+## Practical Example
 
-Suppose you have a file named `tech-doc.txt` with the following content:
+Let's say you want to write a technical document.
+
+Write a draft of your technical document in `draft.txt`.
+
+Create an instructions file named `tech-doc.txt` with the following content:
 
 ```
 Create a technical document.
 ```
 
-To generate a draft based on this input, you can run the following command:
+Generate the document with following command:
 
 ```bash
 gpt tech-doc.txt draft.txt > README.md
 ```
-
-This command will use the GPT model to generate text based on the content of `tech-doc.txt` and save the output to `README.md`.
 
 ## OpenAI API Key
 
@@ -68,7 +70,7 @@ gpt instructions.txt input.txt --model gpt-3.5-turbo > output.txt
 
 ### JSON Output
 
-For structured output, use the `--json` option. Ensure your instructions are in JSON Schema format:
+For structured output, provide a JSON Schema instructions and use the `--json` option:
 
 ```bash
 gpt instructions.json input.txt --json > output.json
