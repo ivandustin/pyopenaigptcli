@@ -13,6 +13,9 @@ def parse():
     parser.add_argument("instructions", type=file, help="Instructions file")
     parser.add_argument("input", type=file, help="Input file")
     parser.add_argument(
-        "--model", type=str, default="gpt-4-turbo-preview", help="Model name"
+        "-m", "--model", type=str, default="gpt-4-turbo-preview", help="Model name"
+    )
+    parser.add_argument(
+        "--json", action="store_true", help="JSON Schema instructions, JSON output"
     )
     return parser.parse_args()
