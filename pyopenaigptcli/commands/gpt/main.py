@@ -10,8 +10,10 @@ def main():
     instructions = arguments.instructions.read()
     input = arguments.input.read()
     if arguments.json:
-        output = gpt_json(arguments.model, json_loads(instructions), input)
+        output = gpt_json(
+            arguments.model, arguments.temperature, json_loads(instructions), input
+        )
         output = json_dumps(output, indent=4)
     else:
-        output = gpt(arguments.model, instructions, input)
+        output = gpt(arguments.model, arguments.temperature, instructions, input)
     stdout.buffer.write(output.encode("utf-8"))

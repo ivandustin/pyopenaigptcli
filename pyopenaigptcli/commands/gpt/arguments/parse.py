@@ -13,9 +13,12 @@ def parse():
     parser.add_argument("instructions", type=file, help="Instructions file")
     parser.add_argument("input", type=file, help="Input file")
     parser.add_argument(
-        "-m", "--model", type=str, default="gpt-4-turbo-preview", help="Model name"
+        "--model", type=str, default="gpt-4-turbo-preview", help="Model name"
     )
     parser.add_argument(
         "--json", action="store_true", help="JSON Schema instructions, JSON output"
+    )
+    parser.add_argument(
+        "--temperature", type=float, default=0.0, help="Temperature value"
     )
     return parser.parse_args()

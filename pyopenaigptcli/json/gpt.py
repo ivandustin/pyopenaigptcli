@@ -2,7 +2,7 @@ from json import loads as json_loads
 from pyopenaichat import chat, user
 
 
-def gpt(model: str, instructions: dict, input: str) -> str:
+def gpt(model: str, temperature: float, instructions: dict, input: str) -> str:
     # pylint: disable=redefined-builtin
     messages = [user(input)]
     tool = {
@@ -12,7 +12,9 @@ def gpt(model: str, instructions: dict, input: str) -> str:
             "parameters": instructions,
         },
     }
-    response = chat(messages, model=model, tools=[tool], tool_choice=tool)
+    response = chat(
+        messages, model=model, temperature=temperature, tools=[tool], tool_choice=tool
+    )
     assert response.role == "assistant"
     assert len(response.tool_calls) == 1
     tool_called = response.tool_calls[0]
