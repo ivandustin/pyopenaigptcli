@@ -61,7 +61,7 @@ keyring set openai api_key
 
 ## OpenAI Model
 
-By default, `pyopenaigptcli` uses the `gpt-4-turbo-preview` model. You can select a different model with the `--model` option:
+By default, `pyopenaigptcli` uses the `gpt-4o` model. You can select a different model with the `--model` option:
 
 ```bash
 gpt instructions.txt input.txt --model gpt-3.5-turbo > output.txt
