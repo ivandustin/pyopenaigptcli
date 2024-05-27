@@ -57,8 +57,10 @@ To authenticate with the OpenAI API, you need to specify your API key via the `O
 
 ### JSON Output
 
-For structured output, provide a JSON Schema in the instructions and use the `--json` option:
+For structured output, provide a [JSON Schema](https://json-schema.org/) in the instructions and use the `--json` option:
 
 ```bash
 gpt instructions.json input.txt --json > output.json
 ```
+
+You can use [Pydantic](https://docs.pydantic.dev/latest/) to generate a [JSON Schema](https://docs.pydantic.dev/latest/concepts/json_schema/) document.
