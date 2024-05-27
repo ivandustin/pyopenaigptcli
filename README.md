@@ -43,7 +43,9 @@ gpt tech-doc.txt draft.txt > README.md
 
 ## OpenAI Model
 
-Specify the OpenAI model to be used by setting the `OPENAI_MODEL` environment variable. You can also use the `--model` argument to specify the OpenAI model directly in the command:
+Specify the OpenAI model to be used by setting the `OPENAI_MODEL` environment variable.
+
+You can also use the `--model` argument to specify the OpenAI model directly in the command:
 
 ```bash
 gpt instructions.txt input.txt --model gpt-4o > output.txt
