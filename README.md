@@ -64,3 +64,46 @@ gpt instructions.json input.txt --json > output.json
 ```
 
 You can use [Pydantic](https://docs.pydantic.dev/latest/) to generate a [JSON Schema](https://docs.pydantic.dev/latest/concepts/json_schema/) document.
+
+## GPT Function
+
+You can import the `gpt` function in your project that allows you to generate text based on a model, temperature, instructions, and input.
+
+### Example
+
+```python
+from pyopenaigptcli import gpt
+
+model = "gpt-4o"
+temperature = 0.7
+instructions = "Generate a creative story based on the following input."
+input_text = "Once upon a time in a land far, far away..."
+
+output = gpt(model, temperature, instructions, input_text)
+print(output)
+```
+
+## JSON GPT Function
+
+The JSON version of the `gpt` function is designed for structured output. It takes a model, temperature, instructions (JSON Schema as a dictionary), and input.
+
+### Example
+
+```python
+from pyopenaigptcli.json import gpt
+
+model = "gpt-4o"
+temperature = 0.7
+instructions = {
+    "type": "object",
+    "properties": {
+        "title": {"type": "string"},
+        "content": {"type": "string"}
+    },
+    "required": ["title", "content"]
+}
+input_text = "Write a summary of the latest technology trends."
+
+output = gpt(model, temperature, instructions, input_text)
+print(output)
+```
