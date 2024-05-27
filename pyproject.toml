@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyopenaigptcli"
-version = "0.2.0"
+version = "0.3.0"
 description = "Easy to use GPT command line interface"
 authors = ["Ivan Dustin Bilon <ivan22.dust@gmail.com>"]
 license = "MIT"
@@ -12,7 +12,6 @@ gpt = "pyopenaigptcli.commands.gpt.main:main"
 [tool.poetry.dependencies]
 python = "^3.9"
 pyopenaichat = {git = "https://github.com/ivandustin/pyopenaichat.git"}
-keyring = "^24.3.1"
 
 
 [build-system]

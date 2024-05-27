@@ -41,31 +41,17 @@ Generate the document with the following command:
 gpt tech-doc.txt draft.txt > README.md
 ```
 
-## OpenAI API Key
-
-To use the `pyopenaigptcli` tool, you must have an OpenAI API key. Obtain an API key from OpenAI and set it using the `keyring` library.
-
-First, install the `keyring` library using pip:
-
-```bash
-pip install keyring
-```
-
-Then, set the API key using the following command:
-
-> **Note:** Upon running this command, you will be prompted to enter the API key in the stdin.
-
-```bash
-keyring set openai api_key
-```
-
 ## OpenAI Model
 
-By default, `pyopenaigptcli` uses the `gpt-4o` model. You can select a different model with the `--model` option:
+Specify the OpenAI model to be used by setting the `OPENAI_MODEL` environment variable. You can also use the `--model` argument to specify the OpenAI model directly in the command:
 
 ```bash
-gpt instructions.txt input.txt --model gpt-3.5-turbo > output.txt
+gpt instructions.txt input.txt --model gpt-4o > output.txt
 ```
+
+## OpenAI API Key
+
+To authenticate with the OpenAI API, you need to specify your API key via the `OPENAI_API_KEY` environment variable.
 
 ### JSON Output
 

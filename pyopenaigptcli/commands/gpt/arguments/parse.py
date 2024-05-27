@@ -1,10 +1,8 @@
 from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter, FileType
-import keyring
-import openai
+from os import environ
 
 
 def parse():
-    openai.api_key = keyring.get_password("openai", "api_key")
     file = FileType("r", encoding="utf-8")
     parser = ArgumentParser(
         formatter_class=ArgumentDefaultsHelpFormatter,
@@ -13,7 +11,7 @@ def parse():
     parser.add_argument("instructions", type=file, help="Instructions file")
     parser.add_argument("input", type=file, help="Input file")
     parser.add_argument(
-        "--model", type=str, default="gpt-4o", help="Model name"
+        "--model", type=str, default=environ["OPENAI_MODEL"], help="Model name"
     )
     parser.add_argument(
         "--json", action="store_true", help="JSON Schema instructions, JSON output"
