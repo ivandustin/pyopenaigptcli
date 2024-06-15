@@ -1,5 +1,4 @@
 from json import loads as json_loads, dumps as json_dumps
-from sys import stdout
 from pyopenaigptcli.json.gpt import gpt as gpt_json
 from pyopenaigptcli.gpt import gpt
 from .arguments.parse import parse
