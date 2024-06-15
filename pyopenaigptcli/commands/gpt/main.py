@@ -16,4 +16,4 @@ def main():
         output = json_dumps(output, indent=4)
     else:
         output = gpt(arguments.model, arguments.temperature, instructions, input_text)
-    stdout.buffer.write(output.encode("utf-8"))
+    print(output)
