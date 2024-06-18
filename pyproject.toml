@@ -14,6 +14,11 @@ python = "^3.9"
 pyopenaichat = {git = "https://github.com/ivandustin/pyopenaichat.git"}
 
 
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+flake8 = "^7.1.0"
+pylint = "^3.2.3"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
