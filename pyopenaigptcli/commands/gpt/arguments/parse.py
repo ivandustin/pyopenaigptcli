@@ -14,9 +14,7 @@ def parse():
         "--model", type=str, default=environ["OPENAI_MODEL"], help="Model name"
     )
     parser.add_argument(
-        "--json", action="store_true", help="JSON Schema instructions, JSON output"
-    )
-    parser.add_argument(
         "--temperature", type=float, default=0.0, help="Temperature value"
     )
+    parser.add_argument("--schema", type=file, help="JSON Schema for structured output")
     return parser.parse_args()

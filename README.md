@@ -55,12 +55,12 @@ gpt instructions.txt input.txt --model gpt-4o > output.txt
 
 To authenticate with the OpenAI API, you need to specify your API key via the `OPENAI_API_KEY` environment variable.
 
-### JSON Output
+### Structured Output
 
-For structured output, provide a [JSON Schema](https://json-schema.org/) in the instructions and use the `--json` option:
+For structured output, provide a [JSON Schema](https://json-schema.org/) in the `--schema` option:
 
 ```bash
-gpt instructions.json input.txt --json > output.json
+gpt instructions.txt input.txt --schema schema.json > output.json
 ```
 
 You can use [Pydantic](https://docs.pydantic.dev/latest/) to generate a [JSON Schema](https://docs.pydantic.dev/latest/concepts/json_schema/) document.
@@ -83,27 +83,40 @@ output = gpt(model, temperature, instructions, input_text)
 print(output)
 ```
 
-## JSON GPT Function
-
-The JSON version of the `gpt` function is designed for structured output. It takes a model, temperature, instructions (JSON Schema as a dictionary), and input.
+## GPT Function (Structured Output)
 
 ### Example
 
 ```python
 from pyopenaigptcli.json import gpt
+import json
 
 model = "gpt-4o"
-temperature = 0.7
-instructions = {
-    "type": "object",
+temperature = 0
+instructions = "Get the age of Anne."
+schema = {
     "properties": {
-        "title": {"type": "string"},
-        "content": {"type": "string"}
+        "age": {
+            "title": "Age",
+            "type": "integer"
+        }
     },
-    "required": ["title", "content"]
+    "required": [
+        "age"
+    ],
+    "title": "Schema",
+    "type": "object"
 }
-input_text = "Write a summary of the latest technology trends."
+input_text = "The age of Prince is 26. The age of Anne is 21. The age of Anna is 19."
 
-output = gpt(model, temperature, instructions, input_text)
-print(output)
+output = gpt(model, temperature, instructions, schema, input_text)
+print(json.dumps(output, indent=4))
+```
+
+Output
+
+```json
+{
+    "age": 21
+}
 ```

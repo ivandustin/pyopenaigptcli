@@ -8,9 +8,10 @@ def main():
     arguments = parse()
     instructions = arguments.instructions.read()
     input_text = arguments.input.read()
-    if arguments.json:
+    if arguments.schema:
+        schema = json_loads(arguments.schema.read())
         output = gpt_json(
-            arguments.model, arguments.temperature, json_loads(instructions), input_text
+            arguments.model, arguments.temperature, instructions, schema, input_text
         )
         output = json_dumps(output, indent=4)
     else:

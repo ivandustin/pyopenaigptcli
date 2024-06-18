@@ -1,15 +1,17 @@
 from json import loads as json_loads
-from pyopenaichat import chat, user
+from pyopenaichat import chat, system, user
 
 
-def gpt(model: str, temperature: float, instructions: dict, input: str) -> str:
+def gpt(
+    model: str, temperature: float, instructions: str, schema: dict, input: str
+) -> str:
     # pylint: disable=redefined-builtin
-    messages = [user(input)]
+    messages = [system(instructions), user(input)]
     tool = {
         "type": "function",
         "function": {
             "name": "function",
-            "parameters": instructions,
+            "parameters": schema,
         },
     }
     response = chat(
