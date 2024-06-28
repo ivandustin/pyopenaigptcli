@@ -120,3 +120,7 @@ Output
     "age": 21
 }
 ```
+
+## Encoding Issues
+
+If you encounter any character encoding issue, especially in Windows, you may need to set the `PYTHONUTF8` environment variable to `1`.
