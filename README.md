@@ -1,18 +1,18 @@
-# pyopenaigptcli
+# gptcli
 
-`pyopenaigptcli` is a command-line interface tool that leverages the GPT (Generative Pre-trained Transformer) model from OpenAI to generate text based on user-provided input. This tool simplifies text generation using the GPT model directly from the command line.
+`gptcli` is a command-line interface tool that leverages the GPT (Generative Pre-trained Transformer) model from OpenAI to generate text based on user-provided input. This tool simplifies text generation using the GPT model directly from the command line.
 
 ## Installation
 
-To use the `pyopenaigptcli` tool, ensure you have Python installed on your system. You can install the tool via pip:
+To use the `gptcli` tool, ensure you have Python installed on your system. You can install the tool via pip:
 
 ```bash
-pip install git+https://github.com/ivandustin/pyopenaigptcli.git
+pip install git+https://github.com/ivandustin/gptcli.git
 ```
 
 ## Usage
 
-The basic syntax for utilizing the `pyopenaigptcli` tool is as follows:
+The basic syntax for utilizing the `gptcli` tool is as follows:
 
 ```bash
 gpt instructions.txt input.txt > output.txt
@@ -72,7 +72,7 @@ You can import the `gpt` function in your project that allows you to generate te
 ### Example
 
 ```python
-from pyopenaigptcli import gpt
+from gptcli import gpt
 
 model = "gpt-4o"
 temperature = 0.7
@@ -88,7 +88,7 @@ print(output)
 ### Example
 
 ```python
-from pyopenaigptcli.json import gpt
+from gptcli.json import gpt
 import json
 
 model = "gpt-4o"

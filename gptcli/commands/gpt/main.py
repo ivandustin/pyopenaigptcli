@@ -1,6 +1,6 @@
 from json import loads as json_loads, dumps as json_dumps
-from pyopenaigptcli.json.gpt import gpt as gpt_json
-from pyopenaigptcli.gpt import gpt
+from gptcli.json.gpt import gpt as gpt_json
+from gptcli.gpt import gpt
 from .arguments.parse import parse
 
 
